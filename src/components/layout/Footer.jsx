@@ -10,6 +10,12 @@ const contactRows = [
     href: profile.links.github,
     external: true,
   },
+  {
+    icon: 'fa-brands fa-linkedin',
+    label: profile.links.linkedin.replace('https://www.', ''),
+    href: profile.links.linkedin,
+    external: true,
+  },
   { icon: 'fa-solid fa-location-dot', label: profile.location },
 ];
 
