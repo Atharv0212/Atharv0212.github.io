@@ -1,53 +1,46 @@
 import { profile } from '../../data/profile';
 import BioCard from './BioCard';
-import DeveloperAvatar from './DeveloperAvatar';
-
-const doodleIcons = ['fa-gear', 'fa-microchip', 'fa-bolt'];
+import { CameraDoodle, ClapperDoodle, MonitorDoodle, PenToolDoodle } from './HeroDoodles';
 
 export default function Hero() {
   return (
-    <section id="about" className="relative pt-6 pb-16 min-h-[640px]">
-      <div className="watermark-num -top-12 -left-6">01</div>
-
+    <section id="about" className="relative pt-0 pb-16">
       <div className="grid grid-cols-12 gap-10 items-center relative z-10">
         {/* Left: headline + bio */}
-        <div className="col-span-12 lg:col-span-7 space-y-6">
-          <div className="flex items-center gap-3">
-            <span className="inline-block bg-brand-yellow text-brand-dark px-4 py-1 rounded-full text-xs font-display font-extrabold uppercase tracking-wide border-2 border-brand-dark shadow-brutal-sm">
-              {profile.role}
-            </span>
-            <div className="flex items-center gap-3 text-brand-dark opacity-80 text-sm">
-              {doodleIcons.map((icon) => (
-                <span
-                  key={icon}
-                  className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-brand-card border border-brand-dark"
-                >
-                  <i className={`fa-solid ${icon}`} />
-                </span>
-              ))}
-            </div>
-          </div>
-
+        <div className="col-span-12 lg:col-span-7 lg:self-start space-y-3">
+          {/* Title lockup: everything inside is sized in em, so the font-size below scales it as a whole */}
           <div className="relative">
-            <h2 className="text-6xl sm:text-7xl xl:text-8xl font-chunky text-brand-dark leading-[0.92] tracking-tighter">
-              <span className="quote-mark text-6xl sm:text-7xl xl:text-8xl mr-1">“</span>PORTO
-              <br />
-              FOLO
-              <span className="inline-block w-4 h-4 sm:w-5 sm:h-5 bg-brand-yellow rounded-full ml-1 border-2 border-brand-dark" />
-            </h2>
-            <div className="mt-3 flex items-center gap-2">
-              <span className="bg-brand-dark text-brand-yellow px-3 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider">
-                Creative Visual Architecture
-              </span>
-              <span className="text-brand-muted text-xs font-mono font-medium">// IIITD Honors Lab</span>
+            <div className="relative pb-[0.1em] pt-[0.3em] text-6xl sm:text-7xl xl:text-8xl">
+              <div className="absolute left-0 top-[0.25em] leading-none">
+                <span className="quote-mark text-[0.6em] font-portfolio !text-brand-yellow [-webkit-text-stroke-color:var(--color-brand-yellow)]">
+                  ”
+                </span>
+              </div>
+
+              <div className="relative pl-[0.6em]">
+                <div className="inline-block bg-brand-yellow rounded-full pl-[0.2em] pr-[0.24em] py-[0.12em]">
+                  <h2 className="font-portfolio">PORTO</h2>
+                </div>
+              </div>
+
+              <h2 className="font-portfolio -mt-[0.08em] relative">
+                FOLIO
+                <span className="inline-block w-[0.24em] h-[0.24em] bg-brand-yellow rounded-full ml-[0.04em] align-baseline" />
+              </h2>
+
+              <MonitorDoodle className="absolute left-[0.55em] top-[-0.28em] w-[0.48em]" />
+              <ClapperDoodle className="absolute left-[3.37em] top-[-0.31em] w-[0.64em]" />
+              <PenToolDoodle className="absolute left-[3.5em] top-[1.25em] w-[0.4em] z-20" />
+              <CameraDoodle className="absolute left-[4.3em] top-[1.75em] w-[0.56em]" />
             </div>
           </div>
 
           <BioCard />
         </div>
 
-        {/* Right: arch backdrop + avatar */}
+        {/* Right: ring + arch backdrop (blank until profile.heroPhoto is set) */}
         <div className="col-span-12 lg:col-span-5 flex flex-col items-center justify-center relative">
+          <div className="absolute top-0 -left-6 w-[260px] h-[260px] rounded-full border-[1.5px] border-brand-dark" />
           <div className="relative w-full max-w-[420px] aspect-[4/5] flex items-end justify-center">
             <div className="absolute inset-x-6 top-8 bottom-0 bg-brand-yellow border-4 border-brand-dark rounded-t-[190px] rounded-b-[40px] shadow-brutal-lg overflow-hidden">
               <div className="absolute inset-3 border-2 border-brand-dark/20 rounded-t-[180px] rounded-b-[30px] pointer-events-none" />
@@ -58,9 +51,11 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="relative z-10 w-full flex justify-center pb-2">
-              <DeveloperAvatar />
-            </div>
+            {profile.heroPhoto && (
+              <div className="relative z-10 w-full flex justify-center pb-2">
+                <img src={profile.heroPhoto} alt={profile.name} className="w-full h-auto max-h-[460px] object-contain" />
+              </div>
+            )}
 
             <div className="absolute -top-3 -right-3 z-20 bg-brand-card border-2 border-brand-dark px-3 py-1.5 rounded-full shadow-brutal-sm flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-brand-yellow border border-brand-dark" />

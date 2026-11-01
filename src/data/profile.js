@@ -7,6 +7,7 @@ export const profile = {
   revision: "Oct '26 Rev",
   email: 'atharv22112@iiitd.ac.in',
   phone: '+91 98XX-XX-IIITD',
+  heroPhoto: '', // drop an image URL/path here (e.g. '/me.png' in public/) to fill the hero portrait
   location: 'IIIT Delhi Campus, Okhla Phase III, New Delhi 110020',
   handles: {
     github: 'Atharv0212',
