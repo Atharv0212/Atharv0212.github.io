@@ -1,7 +1,6 @@
 import { profile } from '../../data/profile';
 import BioCard from './BioCard';
 import DeveloperAvatar from './DeveloperAvatar';
-import QuickLinks from './QuickLinks';
 
 const doodleIcons = ['fa-gear', 'fa-microchip', 'fa-bolt'];
 
@@ -80,8 +79,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      <QuickLinks />
     </section>
   );
 }
