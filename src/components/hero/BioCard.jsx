@@ -19,8 +19,8 @@ export default function BioCard() {
             <span className="underline decoration-brand-yellow decoration-2 underline-offset-2 font-semibold">
               IIIT Delhi
             </span>{' '}
-            building high-throughput low-latency inference pipelines, computer vision models, and low-level system
-            kernels. I design low-level compute engines where hardware constraints meet elegant software abstractions.
+            Computer Science student specializing in Artificial Intelligence with a strong passion for Machine Learning. I bring foundation in Data Structure, Computer Systems and Web Development. Always eager to tackle complex technical challenges and learn new
+technologies to make impactful projects.
           </p>
         </div>
       </div>
@@ -32,25 +32,26 @@ export default function BioCard() {
             <span className="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block" />
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />
-            <span className="ml-2 text-stone-300 font-semibold">atharv@iiitd:~/cv-core</span>
+            <span className="ml-2 text-stone-300 font-semibold">atharv:~/cv-core</span>
           </div>
-          <span className="text-brand-yellow font-bold">C++20 / CUDA</span>
+          <span className="text-brand-yellow font-bold">git bash</span>
         </div>
         <p className="text-stone-300">
-          <span className="text-emerald-400 font-bold">$</span> ./engine --profile --target=tensorrt --quant=fp16
+          <span className="text-emerald-400 font-bold">$</span> git checkout -b innovation
         </p>
         <p className="text-emerald-400 mt-1">
-          <i className="fa-solid fa-check text-[10px]" /> CUDA kernels initialized in 1.4ms [WARP SIZE: 32]
+          <i className="fa-solid fa-check text-[10px]" /> Merge made by the 'caffeine' strategy.
         </p>
         <div className="flex items-center gap-4 mt-2 text-stone-400 text-[11px]">
+
           <span>
-            Throughput: <strong className="text-brand-yellow font-bold">142 FPS</strong>
+            <strong className="text-white font-bold">3</strong> files changed , 
           </span>
           <span>
-            Latency: <strong className="text-white font-bold">20.4ms</strong>
+            <strong className="text-cyan-400 font-bold">582</strong> 582 insertions(+), 
           </span>
-          <span>
-            VRAM: <strong className="text-cyan-400 font-bold">1.2 GB</strong>
+          <span> 
+            <strong className="text-brand-yellow font-bold">45</strong> deletions(-) 
           </span>
         </div>
       </div>

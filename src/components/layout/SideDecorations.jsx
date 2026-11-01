@@ -6,10 +6,9 @@ export default function SideDecorations() {
     <>
       <aside aria-hidden="true" className={`${base} left-4`}>
         <span className="vertical-stamp rotate-180 text-[10px] font-bold uppercase text-brand-dark font-mono">
-          IIIT DELHI • CSAI '26
+          IIIT DELHI • CSAI '29
         </span>
         <div className="w-[1.5px] h-20 bg-brand-dark" />
-        <span className="text-xs font-black font-display">01</span>
       </aside>
       <aside aria-hidden="true" className={`${base} right-4`}>
         <span className="vertical-stamp text-[10px] font-bold uppercase text-brand-dark font-mono">
