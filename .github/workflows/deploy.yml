@@ -1,0 +1,62 @@
+name: Sync stats & deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 */6 * * *' # every 6 hours (UTC)
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write # commit refreshed stats.json
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch GitHub / LeetCode / Codeforces stats
+        run: npm run stats
+        env:
+          GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+
+      - name: Commit stats if changed
+        run: |
+          if ! git diff --quiet -- src/data/stats.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add src/data/stats.json
+            git commit -m 'chore: refresh developer stats'
+            git push
+          fi
+
+      - name: Build
+        run: VITE_STATS_SYNCED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ) npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

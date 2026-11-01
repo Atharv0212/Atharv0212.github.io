@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-11-01T10:43:14.315Z",
+  "github": null,
+  "leetcode": {
+    "username": "Atharv2006",
+    "solved": 54,
+    "difficulty": [
+      {
+        "name": "Easy",
+        "solved": 30,
+        "total": 975
+      },
+      {
+        "name": "Medium",
+        "solved": 23,
+        "total": 2138
+      },
+      {
+        "name": "Hard",
+        "solved": 1,
+        "total": 987
+      }
+    ],
+    "topTags": [
+      "Array",
+      "Stack",
+      "String",
+      "Two Pointers"
+    ],
+    "contest": null
+  },
+  "codeforces": {
+    "handle": "Atharvkhare0212",
+    "rating": 883,
+    "rank": "newbie",
+    "maxRating": 883,
+    "maxRank": "newbie",
+    "contests": 5,
+    "ratingHistory": [
+      391,
+      622,
+      761,
+      818,
+      883
+    ]
+  }
+}

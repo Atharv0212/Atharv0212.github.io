@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atharv Khare — Systems &amp; Computer Vision Engineer Portfolio</title>
+<!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, Outfit, Fira Code -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&amp;family=Outfit:wght@600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- FontAwesome Icons for graphics & doodling -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#F5A623',
+              gold: '#E59819',
+              dark: '#1C1B1A',
+              charcoal: '#2B2927',
+              muted: '#736F6A',
+              bg: '#EDEAE4',
+              card: '#F6F4F0',
+              accent: '#FFAE33',
+              cream: '#FAF8F5'
+            }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace']
+          },
+          boxShadow: {
+            'brutal': '5px 5px 0px 0px #1C1B1A',
+            'brutal-sm': '3px 3px 0px 0px #1C1B1A',
+            'brutal-lg': '8px 8px 0px 0px #1C1B1A',
+            'brutal-yellow': '5px 5px 0px 0px #F5A623',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: Typography & Specific Reference Aesthetics -->
+<style data-purpose="typography">
+    body {
+      background-color: #EDEAE4;
+      color: #1C1B1A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-chunky {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    /* Reference quotation mark styling */
+    .quote-mark {
+      font-family: 'Outfit', sans-serif;
+      color: #F5A623;
+      font-weight: 900;
+      line-height: 0.8;
+      display: inline-block;
+      user-select: none;
+    }
+
+    /* Vertical edge indicator stamps */
+    .vertical-stamp {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      letter-spacing: 0.25em;
+    }
+  </style>
+<!-- Custom Styles: Graphical & Layout Accents -->
+<style data-purpose="graphic-elements">
+    /* Subtle background grid pattern */
+    .bg-grid-subtle {
+      background-image: radial-gradient(rgba(28, 27, 26, 0.08) 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+    }
+
+    /* Giant watermark figures like 01, 02, 03 from the reference */
+    .watermark-num {
+      position: absolute;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 14rem;
+      line-height: 1;
+      color: rgba(28, 27, 26, 0.04);
+      user-select: none;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Dotted arc doodle */
+    .doodle-burst {
+      stroke-dasharray: 4 4;
+      stroke: #1C1B1A;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #EDEAE4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #F5A623;
+      border-radius: 9999px;
+      border: 2px solid #1C1B1A;
+    }
+  </style>
+</head>
+<body class="bg-grid-subtle relative antialiased selection:bg-brand-yellow selection:text-brand-dark min-w-[1280px]">
+<!-- Fixed Vertical Margin Labels (Faithful reference to side annotations) -->
+<aside aria-hidden="true" class="fixed left-4 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-6 z-40 pointer-events-none opacity-40" data-purpose="side-decorations">
+<span class="vertical-stamp rotate-180 text-[10px] font-bold uppercase text-brand-dark font-mono">IIIT DELHI • CSAI '26</span>
+<div class="w-[1.5px] h-20 bg-brand-dark"></div>
+<span class="text-xs font-black font-display">01</span>
+</aside>
+<aside aria-hidden="true" class="fixed right-4 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-6 z-40 pointer-events-none opacity-40" data-purpose="side-decorations">
+<span class="vertical-stamp text-[10px] font-bold uppercase text-brand-dark font-mono">ATHARV // 2026</span>
+<div class="w-[1.5px] h-20 bg-brand-dark"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-brand-yellow border border-brand-dark"></div>
+</aside>
+<!-- BEGIN: MainContainer (1440px wide viewport focus) -->
+<div class="max-w-[1440px] mx-auto px-8 lg:px-14 py-6 relative">
+<!-- BEGIN: TopNavigation -->
+<header class="w-full flex items-center justify-between pb-6 mb-8 border-b-2 border-brand-dark">
+<!-- Logo & Academic Identity -->
+<div class="flex items-center gap-4">
+<div class="w-11 h-11 bg-brand-yellow border-2 border-brand-dark rounded-xl flex items-center justify-center shadow-brutal-sm font-display font-extrabold text-lg text-brand-dark">
+          AK
+        </div>
+<div>
+<h1 class="text-base font-extrabold tracking-tight text-brand-dark font-display leading-tight">
+            ATHARV KHARE
+          </h1>
+<p class="text-xs font-mono font-medium text-brand-muted flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+            CSAI @ IIIT DELHI
+          </p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 bg-brand-card/80 backdrop-blur px-6 py-2.5 rounded-full border-2 border-brand-dark shadow-brutal-sm text-sm font-semibold">
+<a class="hover:text-brand-yellow transition-colors" href="#about">About</a>
+<a class="hover:text-brand-yellow transition-colors" href="#stats">Developer Metrics</a>
+<a class="hover:text-brand-yellow transition-colors" href="#skills">Skills</a>
+<a class="hover:text-brand-yellow transition-colors" href="#projects">Featured Works</a>
+<a class="hover:text-brand-yellow transition-colors" href="#experience">Experience</a>
+<a class="hover:text-brand-yellow transition-colors" href="#articles">Deep Dives</a>
+</nav>
+<!-- Status Pill & Resume Shortcut -->
+<div class="flex items-center gap-3">
+<span class="hidden sm:inline-flex items-center gap-1.5 bg-brand-yellow/30 border border-brand-yellow text-brand-dark text-xs px-3 py-1.5 rounded-full font-mono font-semibold">
+<i class="fa-regular fa-clock text-[10px]"></i> Oct '26 Rev
+        </span>
+<a class="bg-brand-yellow hover:bg-brand-gold text-brand-dark border-2 border-brand-dark font-display font-bold text-xs uppercase px-4 py-2 rounded-full shadow-brutal-sm transition-transform active:translate-x-0.5 active:translate-y-0.5" href="#contact">
+          Get In Touch
+        </a>
+</div>
+</header>
+<!-- END: TopNavigation -->
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-6 pb-16 min-h-[640px]" id="about">
+<!-- Background Giant Watermark Numeral (Reference Match) -->
+<div class="watermark-num -top-12 -left-6">01</div>
+<div class="grid grid-cols-12 gap-10 items-center relative z-10">
+<!-- Hero Left Column: Iconic Headline & Terminal Preview -->
+<div class="col-span-12 lg:col-span-7 space-y-6">
+<!-- Reference Pill Tag & Graphic Doodles -->
+<div class="flex items-center gap-3">
+<span class="inline-block bg-brand-yellow text-brand-dark px-4 py-1 rounded-full text-xs font-display font-extrabold uppercase tracking-wide border-2 border-brand-dark shadow-brutal-sm">
+              Systems &amp; CV Engineer
+            </span>
+<!-- Floating Doodles like in the reference -->
+<div class="flex items-center gap-3 text-brand-dark opacity-80 text-sm">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-brand-card border border-brand-dark">
+<i class="fa-solid fa-gear"></i>
+</span>
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-brand-card border border-brand-dark">
+<i class="fa-solid fa-microchip"></i>
+</span>
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-brand-card border border-brand-dark">
+<i class="fa-solid fa-bolt"></i>
+</span>
+</div>
+</div>
+<!-- The Iconic Typographic Header (Exact Reference Treatment: Quote + Chunky Layout) -->
+<div class="relative">
+<h2 class="text-6xl sm:text-7xl xl:text-8xl font-chunky text-brand-dark leading-[0.92] tracking-tighter">
+<span class="quote-mark text-6xl sm:text-7xl xl:text-8xl mr-1">“</span>PORTO<br/>
+              FOLO<span class="inline-block w-4 h-4 sm:w-5 sm:h-5 bg-brand-yellow rounded-full ml-1 border-2 border-brand-dark"></span>
+</h2>
+<!-- Small Playful Pill overlapping Title -->
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-brand-dark text-brand-yellow px-3 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider">
+                Creative Visual Architecture
+              </span>
+<span class="text-brand-muted text-xs font-mono font-medium">
+                // IIITD Honors Lab
+              </span>
+</div>
+</div>
+<!-- HELLO Bio Box (Styled after the Middle Hello card from reference) -->
+<div class="bg-brand-card border-2 border-brand-dark p-6 rounded-2xl shadow-brutal relative">
+<div class="flex items-start gap-4">
+<!-- Code Glyph Badge -->
+<div class="w-12 h-12 bg-brand-dark text-brand-yellow rounded-xl flex items-center justify-center font-mono font-bold text-xl shrink-0 border border-brand-dark">
+                &gt;_
+              </div>
+<div class="space-y-2">
+<h3 class="text-lg font-chunky text-brand-dark flex items-center gap-1.5">
+<span class="quote-mark text-xl">“</span>HELLO .
+                </h3>
+<p class="text-sm text-brand-charcoal leading-relaxed font-sans font-medium">
+                  I'm <strong class="font-bold text-brand-dark">Atharv Khare</strong>, a B.Tech CSAI scholar at 
+                  <span class="underline decoration-brand-yellow decoration-2 underline-offset-2 font-semibold">IIIT Delhi</span>
+                  building high-throughput low-latency inference pipelines, computer vision models, and low-level system kernels.
+                  I design low-level compute engines where hardware constraints meet elegant software abstractions.
+                </p>
+</div>
+</div>
+<!-- Terminal Execution Mockup -->
+<div class="mt-5 bg-brand-dark rounded-xl p-4 font-mono text-xs text-stone-200 border-2 border-brand-dark">
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-stone-800 text-[11px] text-stone-400">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+<span class="ml-2 text-stone-300 font-semibold">atharv@iiitd:~/cv-core</span>
+</div>
+<span class="text-brand-yellow font-bold">C++20 / CUDA</span>
+</div>
+<p class="text-stone-300"><span class="text-emerald-400 font-bold">$</span> ./engine --profile --target=tensorrt --quant=fp16</p>
+<p class="text-emerald-400 mt-1"><i class="fa-solid fa-check text-[10px]"></i> CUDA kernels initialized in 1.4ms [WARP SIZE: 32]</p>
+<div class="flex items-center gap-4 mt-2 text-stone-400 text-[11px]">
+<span>Throughput: <strong class="text-brand-yellow font-bold">142 FPS</strong></span>
+<span>Latency: <strong class="text-white font-bold">20.4ms</strong></span>
+<span>VRAM: <strong class="text-cyan-400 font-bold">1.2 GB</strong></span>
+</div>
+</div>
+<!-- CTA Actions -->
+<div class="mt-5 flex flex-wrap items-center gap-3">
+<a class="bg-brand-yellow hover:bg-brand-gold text-brand-dark px-6 py-2.5 rounded-xl border-2 border-brand-dark font-display font-black text-xs uppercase tracking-wider shadow-brutal-sm flex items-center gap-2 transition-all" href="#projects">
+<i class="fa-solid fa-arrow-down"></i> Explore System Projects
+              </a>
+<a class="bg-brand-card hover:bg-stone-200 text-brand-dark px-4 py-2.5 rounded-xl border-2 border-brand-dark font-mono text-xs font-bold shadow-brutal-sm flex items-center gap-2 transition-all" href="https://github.com" rel="noreferrer" target="_blank">
+<i class="fa-brands fa-github text-sm"></i> GitHub
+              </a>
+<a class="bg-brand-card hover:bg-stone-200 text-brand-dark px-4 py-2.5 rounded-xl border-2 border-brand-dark font-mono text-xs font-bold shadow-brutal-sm flex items-center gap-2 transition-all" href="https://linkedin.com" rel="noreferrer" target="_blank">
+<i class="fa-brands fa-linkedin-in text-sm"></i> LinkedIn
+              </a>
+</div>
+</div>
+</div>
+<!-- Hero Right Column: Iconic Arch Cutout Backdrop & Character Silhouette -->
+<div class="col-span-12 lg:col-span-5 flex flex-col items-center justify-center relative">
+<!-- Master Arch Graphic Wrapper (Faithfully replicating reference yellow curved pill) -->
+<div class="relative w-full max-w-[420px] aspect-[4/5] flex items-end justify-center">
+<!-- Yellow Arched Pill Shape Container -->
+<div class="absolute inset-x-6 top-8 bottom-0 bg-brand-yellow border-4 border-brand-dark rounded-t-[190px] rounded-b-[40px] shadow-brutal-lg overflow-hidden">
+<!-- Subtle decorative concentric line within the arch -->
+<div class="absolute inset-3 border-2 border-brand-dark/20 rounded-t-[180px] rounded-b-[30px] pointer-events-none"></div>
+<!-- Graphic Texture Inside Yellow Arch -->
+<div class="absolute bottom-4 left-6 right-6 p-4 bg-brand-dark/10 rounded-2xl backdrop-blur-xs border border-brand-dark/20 text-center">
+<p class="text-[11px] font-mono uppercase font-bold text-brand-dark tracking-widest">
+                  Selected Best Systems &amp; AI Until 2026
+                </p>
+</div>
+</div>
+<!-- Developer Figure Cutout Illustration / Silhouette Breaking Boundary -->
+<div class="relative z-10 w-full flex justify-center pb-2">
+<!-- Clean SVG Developer Portrait Avatar rendered in technical bold flat design -->
+<svg class="w-full h-auto max-h-[460px] drop-shadow-xl" fill="none" viewbox="0 0 360 440" xmlns="http://www.w3.org/2000/svg">
+<!-- Outer Shadow/Outline Base -->
+<g id="figure-silhouette">
+<!-- Headphone & Cap/Hair Contour -->
+<path d="M110 145 C110 80, 250 80, 250 145 C250 160, 240 180, 240 200 C240 230, 215 250, 180 250 C145 250, 120 230, 120 200 Z" fill="#1C1B1A"></path>
+<!-- Tech Cap / Visor (Reference figure sports a dark cap and glasses) -->
+<path d="M105 125 C125 95, 235 95, 255 125 L285 135 C285 142, 260 148, 220 148 L100 148 C90 148, 85 138, 105 125 Z" fill="#2B2927" stroke="#1C1B1A" stroke-width="4"></path>
+<!-- Face Silhouette -->
+<path d="M130 145 C130 145, 130 220, 180 220 C230 220, 230 145, 230 145 Z" fill="#FAF8F5" stroke="#1C1B1A" stroke-width="5"></path>
+<!-- Modern Square Tech Glasses (Distinct feature of reference portrait) -->
+<rect fill="#1C1B1A" height="22" rx="4" stroke="#1C1B1A" stroke-width="3" width="34" x="138" y="152"></rect>
+<rect fill="#1C1B1A" height="22" rx="4" stroke="#1C1B1A" stroke-width="3" width="34" x="188" y="152"></rect>
+<line stroke="#1C1B1A" stroke-width="4" x1="172" x2="188" y1="162" y2="162"></line>
+<!-- Lens Reflections -->
+<line stroke="#F5A623" stroke-linecap="round" stroke-width="2.5" x1="142" x2="152" y1="168" y2="158"></line>
+<line stroke="#F5A623" stroke-linecap="round" stroke-width="2.5" x1="192" x2="202" y1="168" y2="158"></line>
+<!-- Facial Hair / Smile Accent -->
+<path d="M165 195 Q180 202 195 195" fill="none" stroke="#1C1B1A" stroke-linecap="round" stroke-width="3"></path>
+<!-- Over-Ear Studio Headphones (Audio/Video motif from reference) -->
+<path d="M110 160 C100 160, 100 195, 110 195 Z" fill="#F5A623" stroke="#1C1B1A" stroke-width="4"></path>
+<path d="M250 160 C260 160, 260 195, 250 195 Z" fill="#F5A623" stroke="#1C1B1A" stroke-width="4"></path>
+<!-- Neck & Collar -->
+<path d="M160 220 L160 250 L200 250 L200 220 Z" fill="#FAF8F5" stroke="#1C1B1A" stroke-width="4"></path>
+<!-- Torso & Engineer Jacket / Polo (Arms Folded Posture from Reference) -->
+<path d="M70 380 C70 270, 110 250, 180 250 C250 250, 290 270, 290 380 L295 440 L65 440 Z" fill="#1C1B1A" stroke="#1C1B1A" stroke-width="6"></path>
+<!-- Polo Collar Details -->
+<polygon fill="#2B2927" points="180,290 145,252 170,250" stroke="#1C1B1A" stroke-width="3"></polygon>
+<polygon fill="#2B2927" points="180,290 215,252 190,250" stroke="#1C1B1A" stroke-width="3"></polygon>
+<!-- Folded Arms & Smartwatch Detail (Exact Reference Detail) -->
+<path d="M85 360 C110 320, 250 320, 275 360 C270 410, 90 410, 85 360 Z" fill="#2B2927" stroke="#1C1B1A" stroke-width="4"></path>
+<!-- Digital Watch on Wrist -->
+<rect fill="#F5A623" height="28" rx="4" stroke="#1C1B1A" stroke-width="3" transform="rotate(-15 115 365)" width="22" x="115" y="365"></rect>
+<rect fill="#1C1B1A" height="16" rx="2" width="14" x="119" y="371"></rect>
+</g>
+</svg>
+</div>
+<!-- Floating Stamp Pill on Top-Right -->
+<div class="absolute -top-3 -right-3 z-20 bg-brand-card border-2 border-brand-dark px-3 py-1.5 rounded-full shadow-brutal-sm flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-brand-yellow border border-brand-dark"></span>
+<span class="font-mono font-bold text-[11px] text-brand-dark">ATHARV.CSAI</span>
+</div>
+<!-- Floating Bottom-Left Indicator Pill -->
+<div class="absolute -bottom-4 -left-4 z-20 bg-brand-dark text-white border-2 border-brand-yellow px-4 py-2 rounded-2xl shadow-brutal flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center font-display font-black text-sm">
+                &gt;
+              </div>
+<div>
+<p class="text-[10px] font-mono text-stone-400 uppercase tracking-widest leading-none">Status</p>
+<p class="text-xs font-display font-bold text-white leading-tight">Atharv Khare</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Category Quick-Links (Visual Reference Match to Table of Contents Icon Row) -->
+<div class="mt-14 pt-8 border-t-2 border-brand-dark/20 grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Tile 1 -->
+<a class="group bg-brand-card hover:bg-brand-yellow border-2 border-brand-dark p-4 rounded-2xl shadow-brutal-sm transition-all duration-200 flex items-center gap-4" href="#skills">
+<div class="w-12 h-12 bg-brand-yellow group-hover:bg-brand-dark text-brand-dark group-hover:text-brand-yellow rounded-xl border-2 border-brand-dark flex items-center justify-center text-xl transition-colors">
+<i class="fa-solid fa-code"></i>
+</div>
+<div>
+<h4 class="font-chunky text-sm text-brand-dark leading-tight">Core Systems</h4>
+<p class="text-xs text-brand-muted font-mono mt-0.5">C++, CUDA, POSIX</p>
+</div>
+</a>
+<!-- Tile 2 -->
+<a class="group bg-brand-card hover:bg-brand-yellow border-2 border-brand-dark p-4 rounded-2xl shadow-brutal-sm transition-all duration-200 flex items-center gap-4" href="#projects">
+<div class="w-12 h-12 bg-brand-yellow group-hover:bg-brand-dark text-brand-dark group-hover:text-brand-yellow rounded-xl border-2 border-brand-dark flex items-center justify-center text-xl transition-colors">
+<i class="fa-solid fa-eye"></i>
+</div>
+<div>
+<h4 class="font-chunky text-sm text-brand-dark leading-tight">Deep Vision</h4>
+<p class="text-xs text-brand-muted font-mono mt-0.5">TensorRT, PyTorch</p>
+</div>
+</a>
+<!-- Tile 3 -->
+<a class="group bg-brand-card hover:bg-brand-yellow border-2 border-brand-dark p-4 rounded-2xl shadow-brutal-sm transition-all duration-200 flex items-center gap-4" href="#stats">
+<div class="w-12 h-12 bg-brand-yellow group-hover:bg-brand-dark text-brand-dark group-hover:text-brand-yellow rounded-xl border-2 border-brand-dark flex items-center justify-center text-xl transition-colors">
+<i class="fa-solid fa-chart-simple"></i>
+</div>
+<div>
+<h4 class="font-chunky text-sm text-brand-dark leading-tight">Bench Metrics</h4>
+<p class="text-xs text-brand-muted font-mono mt-0.5">940+ Commits, 1680 CF</p>
+</div>
+</a>
+<!-- Tile 4 -->
+<a class="group bg-brand-card hover:bg-brand-yellow border-2 border-brand-dark p-4 rounded-2xl shadow-brutal-sm transition-all duration-200 flex items-center gap-4" href="#contact">
+<div class="w-12 h-12 bg-brand-yellow group-hover:bg-brand-dark text-brand-dark group-hover:text-brand-yellow rounded-xl border-2 border-brand-dark flex items-center justify-center text-xl transition-colors">
+<i class="fa-solid fa-address-card"></i>
+</div>
+<div>
+<h4 class="font-chunky text-sm text-brand-dark leading-tight">Work Together</h4>
+<p class="text-xs text-brand-muted font-mono mt-0.5">Scan vCard / Reach out</p>
+</div>
+</a>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: LiveMetricsSection (Developer Heatmaps & Competitive Stats) -->
+<section class="py-14 border-t-2 border-brand-dark relative" id="stats">
+<div class="flex items-center justify-between mb-8">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+<span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-muted">Real-Time Sync</span>
+</div>
+<h3 class="text-3xl sm:text-4xl font-chunky text-brand-dark mt-1 flex items-center gap-2">
+<span class="quote-mark text-3xl sm:text-4xl">“</span>LIVE DEVELOPER METRICS .
+          </h3>
+</div>
+<span class="font-mono text-xs bg-brand-card border border-brand-dark px-3 py-1.5 rounded-lg shadow-brutal-sm">
+          Active Streak: <strong>68 Days</strong>
+</span>
+</div>
+<!-- 3-Column Desktop Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- GitHub Activity Bento Card -->
+<div class="md:col-span-6 bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-mono font-bold uppercase text-brand-muted tracking-wider">GitHub Activity</span>
+<i class="fa-brands fa-github text-2xl text-brand-dark"></i>
+</div>
+<div class="flex items-baseline gap-3">
+<h4 class="text-4xl font-chunky text-brand-dark">940+ Commits</h4>
+<span class="text-xs font-mono text-emerald-600 font-bold bg-emerald-100 px-2 py-0.5 rounded-md">+14 this week</span>
+</div>
+<p class="text-xs text-brand-muted font-mono mt-1">Repository Contributions across C++, CUDA, PyTorch</p>
+</div>
+<!-- Heatmap Mockup Tiles -->
+<div class="mt-6 pt-4 border-t border-brand-dark/20">
+<div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-2">
+<span>Recent 14 Weeks</span>
+<span>Less → More</span>
+</div>
+<div class="grid grid-flow-col grid-rows-4 gap-1.5">
+<!-- Heatmap Simulated Squares -->
+<span class="h-3 rounded-xs bg-brand-yellow/30"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-dark"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-stone-300"></span>
+<span class="h-3 rounded-xs bg-brand-yellow/50"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-dark"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-dark"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-yellow/40"></span>
+<span class="h-3 rounded-xs bg-brand-dark"></span>
+<span class="h-3 rounded-xs bg-brand-dark"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-stone-300"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-stone-300"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-dark"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-yellow"></span>
+<span class="h-3 rounded-xs bg-brand-dark"></span>
+<span class="h-3 rounded-xs bg-brand-dark"></span>
+</div>
+</div>
+</div>
+<!-- LeetCode Card -->
+<div class="md:col-span-3 bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-mono font-bold uppercase text-brand-muted tracking-wider">LeetCode Algorithmic</span>
+<span class="w-6 h-6 rounded-md bg-amber-500/20 text-amber-700 flex items-center justify-center text-xs font-bold">LC</span>
+</div>
+<h4 class="text-4xl font-chunky text-brand-dark">650+</h4>
+<p class="text-xs font-mono text-brand-muted">Problems Solved</p>
+</div>
+<div class="space-y-2 mt-4">
+<div class="flex justify-between text-xs font-mono">
+<span class="text-rose-600 font-bold">Hard (180+)</span>
+<span class="text-brand-dark font-semibold">27.6%</span>
+</div>
+<div class="w-full bg-stone-300 h-2.5 rounded-full overflow-hidden border border-brand-dark">
+<div class="bg-rose-500 h-full rounded-full" style="width: 78%"></div>
+</div>
+<p class="text-[11px] font-mono text-brand-muted pt-1">
+              Top Categories: DP, Graphs, Segment Trees, Lock-Free Concurrency.
+            </p>
+</div>
+</div>
+<!-- Codeforces Card -->
+<div class="md:col-span-3 bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-mono font-bold uppercase text-brand-muted tracking-wider">Codeforces</span>
+<i class="fa-solid fa-chart-line text-lg text-brand-dark"></i>
+</div>
+<h4 class="text-4xl font-chunky text-brand-dark">1680+</h4>
+<div class="inline-block bg-brand-dark text-brand-yellow font-mono text-xs px-2.5 py-0.5 rounded font-bold uppercase mt-1">
+              Expert Rank
+            </div>
+</div>
+<div class="pt-4 border-t border-brand-dark/20 text-xs font-mono space-y-1">
+<p class="text-brand-muted">Percentile: <strong class="text-brand-dark font-bold">Top 8% Globally</strong></p>
+<p class="text-brand-muted">Contests: <strong class="text-brand-dark font-bold">42+ Rated Div 2/3</strong></p>
+<p class="text-[11px] text-brand-dark font-semibold pt-1">Handle: <span class="underline">atharv_0212</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LiveMetricsSection -->
+<!-- BEGIN: SkillsSection (Reference-styled App Icons / Software Badges) -->
+<section class="py-14 border-t-2 border-brand-dark relative" id="skills">
+<div class="watermark-num -top-10 right-4">02</div>
+<!-- Section Title formatted like the reference -->
+<div class="flex items-center justify-between mb-10 relative z-10">
+<div>
+<span class="bg-brand-dark text-white px-3 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider">
+            CORE ARSENAL
+          </span>
+<h3 class="text-3xl sm:text-5xl font-chunky text-brand-dark mt-2 flex items-center gap-2">
+<span class="quote-mark text-3xl sm:text-5xl">“</span>SOFTWARE SKILLS .
+          </h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-brand-yellow border-2 border-brand-dark flex items-center justify-center font-bold text-sm shadow-brutal-sm">
+          3+
+        </div>
+</div>
+<!-- 3 Desktop Category Columns Styled Exactly Like Adobe App Blocks (Pr, Ai, Ps, Lr) in Reference -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
+<!-- Category 1: Languages & Core Systems -->
+<div class="bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal space-y-5">
+<div class="flex items-center justify-between pb-3 border-b-2 border-brand-dark">
+<h4 class="font-chunky text-lg text-brand-dark flex items-center gap-2">
+<i class="fa-solid fa-code text-brand-yellow"></i> Languages &amp; Core Systems
+            </h4>
+<span class="text-xs font-mono bg-stone-200 px-2 py-0.5 rounded border border-brand-dark">Fast &amp; Typed</span>
+</div>
+<!-- Skill Badges with Rich Branding Tiles (Pr, Ai, Ps aesthetic) -->
+<div class="grid grid-cols-2 gap-3">
+<!-- C++20 Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#00599C] text-white flex items-center justify-center font-bold font-mono text-sm border border-brand-dark">
+                C++
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">C++20</p>
+<p class="text-[10px] text-brand-muted font-mono">Modern STL, Concepts</p>
+</div>
+</div>
+<!-- ANSI C Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#A8B9CC] text-[#1C1B1A] flex items-center justify-center font-bold font-mono text-sm border border-brand-dark">
+                C
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">ANSI C99</p>
+<p class="text-[10px] text-brand-muted font-mono">POSIX, Syscalls</p>
+</div>
+</div>
+<!-- Python 3.12 Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#3776AB] text-[#FFD43B] flex items-center justify-center font-bold font-mono text-sm border border-brand-dark">
+                Py
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">Python 3.12</p>
+<p class="text-[10px] text-brand-muted font-mono">NumPy, Cython</p>
+</div>
+</div>
+<!-- Rust / Assembler Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#DEA584] text-brand-dark flex items-center justify-center font-bold font-mono text-xs border border-brand-dark">
+                ASM
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">x86_64 ASM</p>
+<p class="text-[10px] text-brand-muted font-mono">Inline &amp; AT&amp;T</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 2: Frameworks & Deep Vision -->
+<div class="bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal space-y-5">
+<div class="flex items-center justify-between pb-3 border-b-2 border-brand-dark">
+<h4 class="font-chunky text-lg text-brand-dark flex items-center gap-2">
+<i class="fa-solid fa-brain text-brand-yellow"></i> Frameworks &amp; Deep Vision
+            </h4>
+<span class="text-xs font-mono bg-stone-200 px-2 py-0.5 rounded border border-brand-dark">Edge &amp; GPU</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- PyTorch Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#EE4C2C] text-white flex items-center justify-center font-bold font-mono text-sm border border-brand-dark">
+                Pt
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">PyTorch</p>
+<p class="text-[10px] text-brand-muted font-mono">TorchScript &amp; LibTorch</p>
+</div>
+</div>
+<!-- TensorRT Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#76B900] text-brand-dark flex items-center justify-center font-bold font-mono text-xs border border-brand-dark">
+                TRT
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">TensorRT</p>
+<p class="text-[10px] text-brand-muted font-mono">INT8 Quantization</p>
+</div>
+</div>
+<!-- OpenCV Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#5C3EE8] text-white flex items-center justify-center font-bold font-mono text-xs border border-brand-dark">
+                CV
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">OpenCV</p>
+<p class="text-[10px] text-brand-muted font-mono">Filtering, VideoIO</p>
+</div>
+</div>
+<!-- CUDA Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#000000] text-emerald-400 flex items-center justify-center font-bold font-mono text-xs border border-brand-dark">
+                CU
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">CUDA</p>
+<p class="text-[10px] text-brand-muted font-mono">Kernels, Shared Mem</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 3: Toolchains & Systems Profiling -->
+<div class="bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal space-y-5">
+<div class="flex items-center justify-between pb-3 border-b-2 border-brand-dark">
+<h4 class="font-chunky text-lg text-brand-dark flex items-center gap-2">
+<i class="fa-solid fa-wrench text-brand-yellow"></i> Toolchains &amp; Systems Profiling
+            </h4>
+<span class="text-xs font-mono bg-stone-200 px-2 py-0.5 rounded border border-brand-dark">POSIX</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Docker Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#2496ED] text-white flex items-center justify-center font-bold font-mono text-xs border border-brand-dark">
+                Dk
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">Docker</p>
+<p class="text-[10px] text-brand-muted font-mono">Containerization</p>
+</div>
+</div>
+<!-- Linux Kernel Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#FCC624] text-brand-dark flex items-center justify-center font-bold font-mono text-xs border border-brand-dark">
+                Lx
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">Linux</p>
+<p class="text-[10px] text-brand-muted font-mono">eBPF &amp; Perf</p>
+</div>
+</div>
+<!-- Valgrind Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#7B1FA2] text-white flex items-center justify-center font-bold font-mono text-xs border border-brand-dark">
+                Vg
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">Valgrind</p>
+<p class="text-[10px] text-brand-muted font-mono">Memcheck &amp; Cachegrind</p>
+</div>
+</div>
+<!-- GDB Debugger Tile -->
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-brand-dark shadow-brutal-sm">
+<div class="w-10 h-10 rounded-lg bg-[#2E7D32] text-white flex items-center justify-center font-bold font-mono text-xs border border-brand-dark">
+                GDB
+              </div>
+<div>
+<p class="font-bold text-xs text-brand-dark">GDB Debugger</p>
+<p class="text-[10px] text-brand-muted font-mono">Multi-thread TUI</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SkillsSection -->
+<!-- BEGIN: FeaturedWorksSection (Engineering Projects Grid) -->
+<section class="py-14 border-t-2 border-brand-dark relative" id="projects">
+<div class="watermark-num -top-12 left-10">03</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 relative z-10 gap-4">
+<div>
+<span class="bg-brand-yellow text-brand-dark px-3 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider border border-brand-dark">
+            SYSTEMS ARCHITECTURE &amp; RESEARCH
+          </span>
+<h3 class="text-3xl sm:text-5xl font-chunky text-brand-dark mt-2 flex items-center gap-2">
+<span class="quote-mark text-3xl sm:text-5xl">“</span>FEATURED WORKS .
+          </h3>
+</div>
+<p class="text-xs font-mono text-brand-muted max-w-sm">
+          Selected high-throughput inference engines and standalone bare-metal kernels engineered at IIIT Delhi.
+        </p>
+</div>
+<!-- Projects Cards: Wide Desktop Proportions -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
+<!-- Project 1: Low-Latency Fog Detection & Mitigation Models -->
+<article class="bg-brand-card border-2 border-brand-dark rounded-3xl p-7 shadow-brutal flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="inline-block bg-brand-yellow text-brand-dark px-3 py-0.5 rounded-full text-xs font-mono font-extrabold uppercase border border-brand-dark">
+                Academic Research
+              </span>
+<span class="text-xs font-mono text-brand-muted">IIITD • Lab 2024-25</span>
+</div>
+<h4 class="text-2xl font-chunky text-brand-dark leading-tight mb-2">
+              Low-Latency Fog Detection &amp; Mitigation Models
+            </h4>
+<p class="text-xs font-mono text-brand-muted flex items-center gap-2 mb-4">
+<i class="fa-solid fa-graduation-cap text-brand-yellow"></i>
+              Supervised by Prof. Dr. A. Sharma (IIITD)
+            </p>
+<p class="text-sm text-brand-charcoal leading-relaxed mb-6 font-medium">
+              Engineered real-time edge vision inference pipeline for automated vehicle navigation under extreme atmospheric visibility attenuation using customized quantization and pruning.
+            </p>
+<!-- Tech Badges -->
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">PyTorch</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">TensorRT</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">YOLOv8</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">C++ LibTorch</span>
+</div>
+<!-- Key Benchmarks Grid -->
+<div class="grid grid-cols-3 gap-3 p-4 bg-stone-200/70 rounded-2xl border border-brand-dark mb-6 text-center font-mono">
+<div>
+<p class="text-lg font-chunky text-brand-dark">4.2×</p>
+<p class="text-[10px] text-brand-muted uppercase">Inference Boost</p>
+</div>
+<div class="border-x border-brand-dark/20">
+<p class="text-lg font-chunky text-brand-dark">20ms</p>
+<p class="text-[10px] text-brand-muted uppercase">Down from 84ms</p>
+</div>
+<div>
+<p class="text-lg font-chunky text-brand-dark">93.4%</p>
+<p class="text-[10px] text-brand-muted uppercase">mAP@0.5</p>
+</div>
+</div>
+</div>
+<!-- Bottom Action Buttons -->
+<div class="flex items-center gap-3 pt-2">
+<a class="flex-1 text-center py-2.5 rounded-xl border-2 border-brand-dark bg-white hover:bg-stone-100 font-mono text-xs font-bold shadow-brutal-sm transition-all flex items-center justify-center gap-2" href="https://github.com" rel="noreferrer" target="_blank">
+<i class="fa-brands fa-github"></i> GitHub
+            </a>
+<a class="flex-1 text-center py-2.5 rounded-xl border-2 border-brand-dark bg-brand-dark hover:bg-stone-800 text-brand-yellow font-mono text-xs font-bold shadow-brutal-sm transition-all flex items-center justify-center gap-2" href="#projects">
+<i class="fa-solid fa-file-pdf"></i> Report PDF
+            </a>
+</div>
+</article>
+<!-- Project 2: MicroKernel & Priority Preemptive Task Scheduler -->
+<article class="bg-brand-card border-2 border-brand-dark rounded-3xl p-7 shadow-brutal flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="inline-block bg-brand-dark text-brand-yellow px-3 py-0.5 rounded-full text-xs font-mono font-extrabold uppercase border border-brand-dark">
+                Low-Level Systems
+              </span>
+<span class="text-xs font-mono text-brand-muted">x86_64 Arch</span>
+</div>
+<h4 class="text-2xl font-chunky text-brand-dark leading-tight mb-2">
+              MicroKernel &amp; Priority Preemptive Task Scheduler
+            </h4>
+<p class="text-xs font-mono text-brand-muted flex items-center gap-2 mb-4">
+<i class="fa-solid fa-microchip text-brand-yellow"></i>
+              Standalone Bare-Metal Implementation
+            </p>
+<p class="text-sm text-brand-charcoal leading-relaxed mb-6 font-medium">
+              Architected a minimalist x86 microkernel featuring custom virtual memory paging tables, user-mode isolation, round-robin context switching, and IPC message passing.
+            </p>
+<!-- Tech Badges -->
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">C99</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">x86 Assembly</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">QEMU</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">GDB Remote</span>
+</div>
+<!-- Key Benchmarks Grid -->
+<div class="grid grid-cols-3 gap-3 p-4 bg-stone-200/70 rounded-2xl border border-brand-dark mb-6 text-center font-mono">
+<div>
+<p class="text-lg font-chunky text-brand-dark">&lt; 12µs</p>
+<p class="text-[10px] text-brand-muted uppercase">Context Switch</p>
+</div>
+<div class="border-x border-brand-dark/20">
+<p class="text-lg font-chunky text-brand-dark">4-Level</p>
+<p class="text-[10px] text-brand-muted uppercase">Page Translation</p>
+</div>
+<div>
+<p class="text-lg font-chunky text-brand-dark">0 Leak</p>
+<p class="text-[10px] text-brand-muted uppercase">Memory Integrity</p>
+</div>
+</div>
+</div>
+<!-- Bottom Action Buttons -->
+<div class="flex items-center gap-3 pt-2">
+<a class="flex-1 text-center py-2.5 rounded-xl border-2 border-brand-dark bg-white hover:bg-stone-100 font-mono text-xs font-bold shadow-brutal-sm transition-all flex items-center justify-center gap-2" href="https://github.com" rel="noreferrer" target="_blank">
+<i class="fa-brands fa-github"></i> GitHub
+            </a>
+<a class="flex-1 text-center py-2.5 rounded-xl border-2 border-brand-dark bg-brand-yellow hover:bg-brand-gold text-brand-dark font-mono text-xs font-bold shadow-brutal-sm transition-all flex items-center justify-center gap-2" href="#projects">
+<i class="fa-solid fa-play"></i> QEMU Demo
+            </a>
+</div>
+</article>
+<!-- Project 3: Distributed Vision Stream Pipeline & IPC Shm (Wide Spanned Card) -->
+<article class="lg:col-span-2 bg-brand-card border-2 border-brand-dark rounded-3xl p-7 shadow-brutal flex flex-col md:flex-row items-center justify-between gap-6 hover:translate-y-[-2px] transition-transform">
+<div class="space-y-3 max-w-2xl">
+<div class="flex items-center gap-3">
+<span class="inline-block bg-brand-yellow text-brand-dark px-3 py-0.5 rounded-full text-xs font-mono font-extrabold uppercase border border-brand-dark">
+                High-Throughput
+              </span>
+<span class="text-xs font-mono text-brand-muted">Multi-Stream RTSP</span>
+</div>
+<h4 class="text-2xl font-chunky text-brand-dark leading-tight">
+              Distributed Vision Stream Pipeline &amp; IPC Shared Memory
+            </h4>
+<p class="text-sm text-brand-charcoal leading-relaxed font-medium">
+              Engineered a zero-copy POSIX shared memory buffer pipeline synchronizing 16 high-res RTSP feeds with parallel CUDA decoding threads, eliminating ring-buffer cache contention.
+            </p>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">C++</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">POSIX SHM</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">FastAPI</span>
+<span class="px-2.5 py-1 bg-stone-200 border border-brand-dark rounded-md text-xs font-mono font-semibold">Docker</span>
+</div>
+</div>
+<div class="shrink-0 w-full md:w-auto">
+<a class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-dark hover:bg-stone-800 text-white font-mono text-xs font-bold border-2 border-brand-dark shadow-brutal-sm" href="https://github.com" rel="noreferrer" target="_blank">
+<i class="fa-brands fa-github text-sm"></i> View Source on GitHub
+            </a>
+</div>
+</article>
+</div>
+</section>
+<!-- END: FeaturedWorksSection -->
+<!-- BEGIN: ExperienceTimelineSection (Reference-matched Education & Experience formatting) -->
+<section class="py-14 border-t-2 border-brand-dark relative" id="experience">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left: Education Column (Styled after Education section in reference) -->
+<div class="lg:col-span-5 space-y-6">
+<div class="flex items-center gap-2">
+<span class="quote-mark text-3xl">“</span>
+<h3 class="text-3xl font-chunky text-brand-dark">EDUCATION .</h3>
+</div>
+<!-- Academic Card -->
+<div class="bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal space-y-4">
+<div class="flex items-start gap-4">
+<div class="bg-brand-yellow text-brand-dark font-display font-black text-xl px-3 py-2 rounded-xl border-2 border-brand-dark leading-tight text-center shrink-0">
+                2022<br/><span class="text-xs font-mono">2026</span>
+</div>
+<div>
+<h4 class="font-chunky text-lg text-brand-dark leading-tight">
+                  B.Tech Computer Science &amp; Artificial Intelligence
+                </h4>
+<p class="text-xs font-mono text-brand-muted mt-1 font-semibold">
+                  Indraprastha Institute of Information Technology Delhi (IIIT-D)
+                </p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs px-2.5 py-0.5 rounded font-mono font-bold">
+                    CGPA: 8.8 / 10.0
+                  </span>
+<span class="text-xs text-brand-muted font-mono">Dean's Merit List</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-brand-dark/20 text-xs text-brand-charcoal space-y-1 font-medium">
+<p>• Relevant Coursework: Operating Systems, GPU Computing, Deep Learning, Distributed Systems, Computer Networks.</p>
+<p>• Teaching Assistant: Mentored 120+ undergraduates in Systems Programming with GDB &amp; Valgrind.</p>
+</div>
+</div>
+</div>
+<!-- Right: Working Experience Column (Direct Reference Match) -->
+<div class="lg:col-span-7 space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="quote-mark text-3xl">“</span>
+<h3 class="text-3xl font-chunky text-brand-dark">WORKING EXPERIENCE .</h3>
+</div>
+<span class="text-xs font-mono text-brand-muted">Career &amp; Open Source</span>
+</div>
+<!-- Timeline Container -->
+<div class="space-y-4">
+<!-- Experience Item 1 -->
+<div class="bg-brand-card border-2 border-brand-dark rounded-2xl p-5 shadow-brutal-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="bg-brand-yellow text-brand-dark text-[11px] font-mono font-bold px-2 py-0.5 rounded border border-brand-dark">
+                    Open Source Fellow
+                  </span>
+<span class="font-mono text-xs text-brand-muted">2024</span>
+</div>
+<h4 class="font-chunky text-base text-brand-dark mt-1">GSoC Contributor @ Wagtail CMS</h4>
+<p class="text-xs text-brand-charcoal font-medium mt-1">
+                  Google Summer of Code: Refactored asynchronous worker queue hooks and image renditions pipeline, reducing database lock contention by 34% across high-traffic multi-tenant sites.
+                </p>
+</div>
+<i class="fa-solid fa-chevron-right text-brand-muted text-sm hidden sm:block"></i>
+</div>
+<!-- Experience Item 2 -->
+<div class="bg-brand-card border-2 border-brand-dark rounded-2xl p-5 shadow-brutal-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="bg-stone-200 text-brand-dark text-[11px] font-mono font-bold px-2 py-0.5 rounded border border-brand-dark">
+                    Hackathons
+                  </span>
+<span class="font-mono text-xs text-brand-muted">2023 - 24</span>
+</div>
+<h4 class="font-chunky text-base text-brand-dark mt-1">HackIIIT Winner &amp; SIH Finalist</h4>
+<p class="text-xs text-brand-charcoal font-medium mt-1">
+                  Awarded 1st place at HackIIIT for creating an on-device OCR scanner with offline edge inference under 50MB runtime memory footprint.
+                </p>
+</div>
+<i class="fa-solid fa-chevron-right text-brand-muted text-sm hidden sm:block"></i>
+</div>
+<!-- Experience Item 3 -->
+<div class="bg-brand-card border-2 border-brand-dark rounded-2xl p-5 shadow-brutal-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="bg-stone-200 text-brand-dark text-[11px] font-mono font-bold px-2 py-0.5 rounded border border-brand-dark">
+                    Teaching &amp; Community
+                  </span>
+<span class="font-mono text-xs text-brand-muted">2023 - Pres</span>
+</div>
+<h4 class="font-chunky text-base text-brand-dark mt-1">Systems Programming Workshops</h4>
+<p class="text-xs text-brand-charcoal font-medium mt-1">
+                  Peer Tutor @ IIIT Delhi: Mentored 120+ undergraduates in pointer arithmetic, memory alignment, POSIX threads concurrency, and assembly level debugging with GDB.
+                </p>
+</div>
+<i class="fa-solid fa-chevron-right text-brand-muted text-sm hidden sm:block"></i>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ExperienceTimelineSection -->
+<!-- BEGIN: LeadershipAndArticlesSection -->
+<section class="py-14 border-t-2 border-brand-dark relative" id="articles">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left: Leadership & Social Impact (Asha Deep Foundation & Swimming) -->
+<div class="lg:col-span-5 space-y-6">
+<div class="flex items-center gap-2">
+<span class="quote-mark text-3xl">“</span>
+<h3 class="text-3xl font-chunky text-brand-dark">LEADERSHIP &amp; IMPACT .</h3>
+</div>
+<!-- Asha Deep Foundation Box -->
+<div class="bg-brand-yellow border-2 border-brand-dark rounded-2xl p-6 shadow-brutal text-brand-dark space-y-3">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-brand-dark text-brand-yellow flex items-center justify-center text-lg">
+<i class="fa-solid fa-hands-holding-child"></i>
+</div>
+<span class="bg-brand-dark text-white font-mono text-[10px] uppercase font-bold px-2.5 py-1 rounded">Social Impact</span>
+</div>
+<h4 class="text-xl font-chunky text-brand-dark">Asha Deep Foundation</h4>
+<p class="text-xs font-mono font-bold uppercase tracking-wider text-stone-800">
+              STEM &amp; Humanities Education for Underprivileged Youth
+            </p>
+<p class="text-xs text-brand-charcoal font-medium leading-relaxed">
+              Coordinated weekly foundational computational thinking, math, and literacy modules for over 60+ underprivileged students in Delhi NCR.
+            </p>
+</div>
+<!-- Athletics: Swimming Coordinator -->
+<div class="bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal space-y-3">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-brand-yellow border border-brand-dark text-brand-dark flex items-center justify-center text-lg">
+<i class="fa-solid fa-person-swimming"></i>
+</div>
+<span class="bg-stone-200 border border-brand-dark text-brand-dark font-mono text-[10px] uppercase font-bold px-2.5 py-1 rounded">Athletics &amp; Ops</span>
+</div>
+<h4 class="text-xl font-chunky text-brand-dark">Student Coordinator — Swimming</h4>
+<p class="text-xs font-mono text-brand-muted font-bold uppercase">
+              IIIT Delhi Aquatics Contingent Lead
+            </p>
+<p class="text-xs text-brand-charcoal font-medium leading-relaxed">
+              Designed high-intensity interval conditioning regimens, managed inter-collegiate logistics, and led the official university squad at IIT Guwahati Spirit 2025.
+            </p>
+</div>
+</div>
+<!-- Right: Technical Articles / Publications Carousel Preview -->
+<div class="lg:col-span-7 space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="quote-mark text-3xl">“</span>
+<h3 class="text-3xl font-chunky text-brand-dark">TECHNICAL ARTICLES .</h3>
+</div>
+<span class="text-xs font-mono text-brand-muted">Swipe →</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Article Card 1 -->
+<a class="group bg-brand-card hover:bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-brutal-sm transition-all flex flex-col justify-between" href="#articles">
+<div>
+<div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-2">
+<span class="text-brand-yellow font-bold"><i class="fa-solid fa-bolt"></i> CV PERF</span>
+<span>6 min read</span>
+</div>
+<h4 class="font-chunky text-base text-brand-dark group-hover:text-brand-yellow transition-colors leading-tight mb-2">
+                  Optimizing Inference Time for Fog-Detection on Edge SOCs
+                </h4>
+<p class="text-xs text-brand-charcoal font-medium leading-relaxed">
+                  How FP16 quantization combined with kernel fusion reduced thermal throttling on embedded ARM boards without degrading precision.
+                </p>
+</div>
+<div class="pt-4 mt-3 border-t border-brand-dark/10 flex items-center justify-between text-xs font-mono font-bold text-brand-dark">
+<span>Read Note</span>
+<i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+</div>
+</a>
+<!-- Article Card 2 -->
+<a class="group bg-brand-card hover:bg-white border-2 border-brand-dark rounded-2xl p-5 shadow-brutal-sm transition-all flex flex-col justify-between" href="#articles">
+<div>
+<div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-2">
+<span class="text-brand-yellow font-bold"><i class="fa-solid fa-terminal"></i> SYSTEMS</span>
+<span>9 min read</span>
+</div>
+<h4 class="font-chunky text-base text-brand-dark group-hover:text-brand-yellow transition-colors leading-tight mb-2">
+                  Systems Architecture of Bare-Metal Memory Management
+                </h4>
+<p class="text-xs text-brand-charcoal font-medium leading-relaxed">
+                  An architectural walkthrough of 4-level page table translation, TLB invalidation, zero-page demand paging, and kernel heap allocation.
+                </p>
+</div>
+<div class="pt-4 mt-3 border-t border-brand-dark/10 flex items-center justify-between text-xs font-mono font-bold text-brand-dark">
+<span>Read Note</span>
+<i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LeadershipAndArticlesSection -->
+<!-- BEGIN: FooterContactSection (Exact Replica of Reference 'Let's Work Together' + QR Code Tile) -->
+<footer class="pt-10 pb-12 border-t-2 border-brand-dark mt-8" id="contact">
+<!-- Signature Yellow Card with QR Code and Contact Table (Direct Reference Mirror) -->
+<div class="bg-brand-yellow border-4 border-brand-dark rounded-3xl p-8 sm:p-10 shadow-brutal-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left Column: Actual Styled QR Code Box with Badge -->
+<div class="lg:col-span-4 flex flex-col items-center justify-center text-center">
+<div class="bg-white p-4 rounded-2xl border-3 border-brand-dark shadow-brutal inline-block">
+<!-- SVG QR Code Iconography -->
+<svg class="w-36 h-36 mx-auto" fill="#1C1B1A" viewbox="0 0 100 100">
+<!-- Corner Finder 1 -->
+<rect fill="none" height="28" rx="4" stroke="#1C1B1A" stroke-width="4" width="28" x="5" y="5"></rect>
+<rect fill="#1C1B1A" height="16" width="16" x="11" y="11"></rect>
+<!-- Corner Finder 2 -->
+<rect fill="none" height="28" rx="4" stroke="#1C1B1A" stroke-width="4" width="28" x="67" y="5"></rect>
+<rect fill="#1C1B1A" height="16" width="16" x="73" y="11"></rect>
+<!-- Corner Finder 3 -->
+<rect fill="none" height="28" rx="4" stroke="#1C1B1A" stroke-width="4" width="28" x="5" y="67"></rect>
+<rect fill="#1C1B1A" height="16" width="16" x="11" y="73"></rect>
+<!-- Micro Data Blocks -->
+<rect fill="#1C1B1A" height="8" width="8" x="42" y="10"></rect>
+<rect fill="#1C1B1A" height="6" width="6" x="54" y="18"></rect>
+<rect fill="#1C1B1A" height="8" width="8" x="44" y="28"></rect>
+<rect fill="#1C1B1A" height="8" width="8" x="10" y="44"></rect>
+<rect fill="#1C1B1A" height="6" width="6" x="24" y="48"></rect>
+<rect fill="#1C1B1A" height="20" rx="3" width="20" x="40" y="42"></rect>
+<rect fill="#1C1B1A" height="8" width="8" x="66" y="44"></rect>
+<rect fill="#1C1B1A" height="8" width="8" x="80" y="50"></rect>
+<rect fill="#1C1B1A" height="10" width="10" x="42" y="70"></rect>
+<rect fill="#1C1B1A" height="8" width="8" x="56" y="80"></rect>
+<rect fill="#1C1B1A" height="8" width="16" x="74" y="72"></rect>
+<rect fill="#1C1B1A" height="8" width="8" x="82" y="84"></rect>
+</svg>
+<p class="text-[10px] font-mono uppercase font-bold text-brand-dark tracking-wider mt-2">
+              Scan vCard
+            </p>
+</div>
+<span class="text-xs font-mono font-bold text-brand-dark mt-3">
+            Open for High-Performance Systems &amp; CV Roles
+          </span>
+</div>
+<!-- Right Column: Contact Rows Styled as in Reference -->
+<div class="lg:col-span-8 space-y-4">
+<div class="inline-block bg-brand-dark text-white px-4 py-1.5 rounded-lg text-sm font-mono font-black uppercase tracking-wider">
+            Let's Work Together :
+          </div>
+<div class="space-y-3 bg-white/70 backdrop-blur-xs p-6 rounded-2xl border-2 border-brand-dark font-mono text-sm">
+<!-- Email Row -->
+<div class="flex items-center gap-3 text-brand-dark">
+<span class="w-8 h-8 rounded-lg bg-brand-dark text-brand-yellow flex items-center justify-center shrink-0">
+<i class="fa-regular fa-envelope"></i>
+</span>
+<span class="font-bold">:</span>
+<a class="hover:underline font-semibold break-all" href="mailto:atharv22112@iiitd.ac.in">
+                atharv22112@iiitd.ac.in
+              </a>
+</div>
+<!-- Phone Row -->
+<div class="flex items-center gap-3 text-brand-dark">
+<span class="w-8 h-8 rounded-lg bg-brand-dark text-brand-yellow flex items-center justify-center shrink-0">
+<i class="fa-solid fa-phone"></i>
+</span>
+<span class="font-bold">:</span>
+<span class="font-semibold">+91 98XX-XX-IIITD</span>
+</div>
+<!-- GitHub / Profiles Row -->
+<div class="flex items-center gap-3 text-brand-dark">
+<span class="w-8 h-8 rounded-lg bg-brand-dark text-brand-yellow flex items-center justify-center shrink-0">
+<i class="fa-brands fa-github"></i>
+</span>
+<span class="font-bold">:</span>
+<a class="hover:underline font-semibold" href="https://github.com/Atharv0212" rel="noreferrer" target="_blank">
+                github.com/Atharv0212
+              </a>
+</div>
+<!-- Location Row -->
+<div class="flex items-center gap-3 text-brand-dark">
+<span class="w-8 h-8 rounded-lg bg-brand-dark text-brand-yellow flex items-center justify-center shrink-0">
+<i class="fa-solid fa-location-dot"></i>
+</span>
+<span class="font-bold">:</span>
+<span class="font-semibold">IIIT Delhi Campus, Okhla Phase III, New Delhi 110020</span>
+</div>
+</div>
+<p class="text-xs font-mono text-brand-dark font-medium">
+            Available for Summer 2025/2026 Core Engineering Fellowships &amp; Machine Learning Systems Research.
+          </p>
+</div>
+</div>
+<!-- Bottom Minimal Bar -->
+<div class="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-brand-muted gap-4">
+<div>
+          © 2026 Atharv Khare. Designed with the visual brutalism aesthetics of <span class="text-brand-dark font-bold">Porto Folio Reference</span>.
+        </div>
+<div class="flex items-center gap-4">
+<a class="hover:text-brand-dark" href="#">Back to Top ↑</a>
+<span>•</span>
+<span>NEW DELHI, IN</span>
+</div>
+</div>
+</footer>
+<!-- END: FooterContactSection -->
+</div>
+<!-- END: MainContainer -->
+<!-- Interactive Smooth Script for Tab Jump Highlights -->
+<script data-purpose="interaction">
+    document.addEventListener('DOMContentLoaded', () => {
+      // Highlight current section on scroll
+      const links = document.querySelectorAll('header nav a');
+      window.addEventListener('scroll', () => {
+        let fromTop = window.scrollY + 100;
+        links.forEach(link => {
+          let section = document.querySelector(link.hash);
+          if (
+            section &&
+            section.offsetTop <= fromTop &&
+            section.offsetTop + section.offsetHeight > fromTop
+          ) {
+            link.classList.add('text-brand-yellow');
+          } else {
+            link.classList.remove('text-brand-yellow');
+          }
+        });
+      });
+    });
+  </script>
+</body></html>

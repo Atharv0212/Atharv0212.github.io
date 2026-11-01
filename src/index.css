@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+/* Design tokens (was the inline tailwind.config in the Stitch export) */
+@theme {
+  --color-brand-yellow: #f5a623;
+  --color-brand-gold: #e59819;
+  --color-brand-dark: #1c1b1a;
+  --color-brand-charcoal: #2b2927;
+  --color-brand-muted: #736f6a;
+  --color-brand-bg: #edeae4;
+  --color-brand-card: #f6f4f0;
+  --color-brand-accent: #ffae33;
+  --color-brand-cream: #faf8f5;
+
+  --font-display: 'Outfit', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  --shadow-brutal: 5px 5px 0px 0px #1c1b1a;
+  --shadow-brutal-sm: 3px 3px 0px 0px #1c1b1a;
+  --shadow-brutal-lg: 8px 8px 0px 0px #1c1b1a;
+  --shadow-brutal-yellow: 5px 5px 0px 0px #f5a623;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-dark);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-brand-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-brand-yellow);
+    border-radius: 9999px;
+    border: 2px solid var(--color-brand-dark);
+  }
+}
+
+/* Typography */
+@utility font-chunky {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+@utility quote-mark {
+  font-family: var(--font-display);
+  color: var(--color-brand-yellow);
+  font-weight: 900;
+  line-height: 0.8;
+  display: inline-block;
+  user-select: none;
+}
+
+@utility vertical-stamp {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.25em;
+}
+
+/* Graphic accents */
+@utility bg-grid-subtle {
+  background-image: radial-gradient(rgba(28, 27, 26, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+@utility watermark-num {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 14rem;
+  line-height: 1;
+  color: rgba(28, 27, 26, 0.04);
+  user-select: none;
+  z-index: 0;
+  pointer-events: none;
+}
