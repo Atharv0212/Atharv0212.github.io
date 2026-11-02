@@ -70,6 +70,12 @@ technologies to make impactful projects.
         <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className={ctaSecondary}>
           <i className="fa-brands fa-linkedin-in text-sm" /> LinkedIn
         </a>
+        <a href={profile.links.resume} target="_blank" rel="noreferrer" className={ctaSecondary}>
+          <i className="fa-solid fa-file text-sm" /> Resume
+        </a>
+        {/* <a href={profile.links.resume} target="_blank" rel="noreferrer" className={ctaSecondary}>
+          <i className="fa-solid fa-book text-sm" /> CV
+        </a> */}
       </div>
     </div>
   );
