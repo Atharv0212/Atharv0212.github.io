@@ -7,7 +7,7 @@ export const profile = {
   revision: "Nov '26 Rev",
   email: 'atharv25132@iiitd.ac.in',
   phone: '+91 93107-15994',
-  heroPhoto: '', // drop an image URL/path here (e.g. '/me.png' in public/) to fill the hero portrait
+  heroPhoto: '/me.png', // drop an image URL/path here (e.g. '/me.png' in public/) to fill the hero portrait
   location: 'IIIT Delhi , Okhla Phase III, New Delhi 110020',
   handles: {
     github: 'Atharv0212',
@@ -19,6 +19,7 @@ export const profile = {
     leetcode: 'https://leetcode.com/u/Atharv2006/',
     codeforces: 'https://codeforces.com/profile/Atharvkhare0212',
     linkedin: 'https://www.linkedin.com/in/atharv-khare-24a11a249/',
+    resume: 'https://drive.google.com/file/d/1ezEQD449stP6141T0c0LZ9j3Z_piI-6f/view?usp=sharing',
   },
 };
 
@@ -28,5 +29,5 @@ export const navLinks = [
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Featured Works' },
   { href: '#experience', label: 'Experience' },
-  { href: '#articles', label: 'Deep Dives' },
+  { href: '#articles', label: 'Co-curricular' },
 ];

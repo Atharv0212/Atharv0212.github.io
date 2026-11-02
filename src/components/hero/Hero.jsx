@@ -54,7 +54,7 @@ export default function Hero() {
 
             {profile.heroPhoto && (
               <div className="relative z-10 w-full flex justify-center pb-2">
-                <img src={profile.heroPhoto} alt={profile.name} className="w-full h-auto max-h-[460px] object-contain" />
+                <img src={profile.heroPhoto} alt={profile.name} className="w-full h-auto max-h-[550px] object-contain" />
               </div>
             )}
 
