@@ -1,20 +1,20 @@
 export const leadership = [
   {
-    title: 'Asha Deep Foundation',
-    icon: 'fa-hands-holding-child',
-    tag: 'Social Impact',
-    subtitle: 'STEM & Humanities Education for Underprivileged Youth',
+    title: 'National Level Swimmer',
+    icon: 'fa-trophy',
+    tag: 'Competitive Swimming',
+    subtitle: 'Zonals Winner, SGFI and National Participant',
     description:
-      'Coordinated weekly foundational computational thinking, math, and literacy modules for over 60+ underprivileged students in Delhi NCR.',
+      'State-medalist swimmer, CBSE Zonal champion, and national-level competitor who has represented his state at the SGFI and National Championships.',
     featured: true,
   },
   {
     title: 'Student Coordinator — Swimming',
     icon: 'fa-person-swimming',
-    tag: 'Athletics & Ops',
+    tag: 'Representation & Ops',
     subtitle: 'IIIT Delhi Aquatics Contingent Lead',
     description:
-      'Designed high-intensity interval conditioning regimens, managed inter-collegiate logistics, and led the official university squad at IIT Guwahati Spirit 2025.',
+      'Designed high-intensity interval conditioning regimens, managed inter-collegiate logistics, and led the official university squad at IIT Guwahati Spirit 2025 and IIT Mandi Ranna-Neeti 2026 winning runner up at both.',
   },
 ];
 

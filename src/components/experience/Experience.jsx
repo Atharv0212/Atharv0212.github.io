@@ -1,4 +1,4 @@
-import { education, experience } from '../../data/experience';
+import { education, experience, education_high, education_sec } from '../../data/experience';
 import QuoteHeading from '../ui/QuoteHeading';
 
 export default function Experience() {
@@ -22,7 +22,7 @@ export default function Experience() {
                   <span className="bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs px-2.5 py-0.5 rounded font-mono font-bold">
                     {education.cgpa}
                   </span>
-                  <span className="text-xs text-brand-muted font-mono">{education.honor}</span>
+                  {/* <span className="text-xs text-brand-muted font-mono">{education.honor}</span> */}
                 </div>
               </div>
             </div>
@@ -32,6 +32,45 @@ export default function Experience() {
               ))}
             </div>
           </div>
+          <div className="bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal space-y-4">
+            <div className="flex items-start gap-4">
+              <div className="bg-brand-yellow text-brand-dark font-display font-black text-xl px-3 py-2 rounded-xl border-2 border-brand-dark leading-tight text-center shrink-0">
+                {education_sec.start}
+                <br />
+                <span className="text-xs font-mono">{education_high.end}</span>
+              </div>
+              <div>
+                <h4 className="font-chunky text-lg text-brand-dark leading-tight">{education_sec.degree}</h4>
+                <p className="text-xs font-mono text-brand-muted mt-1 font-semibold">{education_sec.institution}</p>
+                <div className="mt-3 flex items-center gap-2">
+                  <span className="bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs px-2.5 py-0.5 rounded font-mono font-bold">
+                    {education_sec.cgpa}
+                  </span>
+                  {/* <span className="text-xs text-brand-muted font-mono">{education.honor}</span> */}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-brand-card border-2 border-brand-dark rounded-2xl p-6 shadow-brutal space-y-4">
+            <div className="flex items-start gap-4">
+              <div className="bg-brand-yellow text-brand-dark font-display font-black text-xl px-3 py-2 rounded-xl border-2 border-brand-dark leading-tight text-center shrink-0">
+                {education_high.start}
+                <br />
+                <span className="text-xs font-mono">{education_high.end}</span>
+              </div>
+              <div>
+                <h4 className="font-chunky text-lg text-brand-dark leading-tight">{education_high.degree}</h4>
+                <p className="text-xs font-mono text-brand-muted mt-1 font-semibold">{education_high.institution}</p>
+                <div className="mt-3 flex items-center gap-2">
+                  <span className="bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs px-2.5 py-0.5 rounded font-mono font-bold">
+                    {education_high.cgpa}
+                  </span>
+                  {/* <span className="text-xs text-brand-muted font-mono">{education.honor}</span> */}
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
 
         {/* Working experience */}
@@ -60,7 +99,15 @@ export default function Experience() {
                   <h4 className="font-chunky text-base text-brand-dark mt-1">{item.title}</h4>
                   <p className="text-xs text-brand-charcoal font-medium mt-1">{item.description}</p>
                 </div>
-                <i className="fa-solid fa-chevron-right text-brand-muted text-sm hidden sm:block" />
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${item.title}`}
+                  className="hidden sm:block text-brand-muted hover:text-brand-dark transition-colors"
+                >
+                  <i className="fa-solid fa-chevron-right text-sm" />
+                </a>
               </div>
             ))}
           </div>

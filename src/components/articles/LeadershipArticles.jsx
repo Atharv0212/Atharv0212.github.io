@@ -69,8 +69,8 @@ export default function LeadershipArticles() {
     <section id="articles" className="py-14 border-t-2 border-brand-dark relative">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-5 space-y-6">
-          <QuoteHeading>LEADERSHIP &amp; IMPACT</QuoteHeading>
-          {leadership.map((item) => (
+          <QuoteHeading>LEADERSHIP &amp; COMPETITIVENESS</QuoteHeading>
+          {leadership.map((item) => ( 
             <LeadershipCard key={item.title} item={item} />
           ))}
         </div>
