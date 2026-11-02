@@ -27,12 +27,10 @@ export default function Footer() {
         <div className="lg:col-span-4 flex flex-col items-center justify-center text-center">
           <div className="bg-white p-4 rounded-2xl border-3 border-brand-dark shadow-brutal inline-block">
             <QrGraphic />
-            <p className="text-[10px] font-mono uppercase font-bold text-brand-dark tracking-wider mt-2">Scan vCard</p>
+            <p className="text-[15px] font-mono uppercase font-bold text-brand-dark tracking-wider mt-2">Scan vCard</p>
           </div>
-          <span className="text-xs font-mono font-bold text-brand-dark mt-3">
-            Open for High-Performance Systems &amp; CV Roles
-          </span>
-        </div>
+          
+        </div>  
 
         {/* Contact rows */}
         <div className="lg:col-span-8 space-y-4">
@@ -61,14 +59,14 @@ export default function Footer() {
             ))}
           </div>
           <p className="text-xs font-mono text-brand-dark font-medium">
-            Available for Summer 2025/2026 Core Engineering Fellowships &amp; Machine Learning Systems Research.
+            Available for 2026/2027 Core Engineering Fellowships &amp; Machine Learning Systems Research.
           </p>
         </div>
       </div>
 
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-brand-muted gap-4">
         <div>
-          © 2026 {profile.name}. Designed with the visual brutalism aesthetics of{' '}
+          © 2026 {profile.name}. Designed with the visual  aesthetics of{' '}
           <span className="text-brand-dark font-bold">Porto Folio Reference</span>.
         </div>
         <div className="flex items-center gap-4">

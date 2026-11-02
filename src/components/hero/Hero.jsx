@@ -1,6 +1,7 @@
 import { profile } from '../../data/profile';
 import BioCard from './BioCard';
-import { CameraDoodle, ClapperDoodle, MonitorDoodle, PenToolDoodle } from './HeroDoodles';
+import { ClaudeMascotDoodle, CodeDoodle, MonitorDoodle } from './HeroDoodles';
+import brainIcon from '../../assets/brain.png';
 
 export default function Hero() {
   return (
@@ -29,9 +30,9 @@ export default function Hero() {
               </h2>
 
               <MonitorDoodle className="absolute left-[0.55em] top-[-0.28em] w-[0.48em]" />
-              <ClapperDoodle className="absolute left-[3.37em] top-[-0.31em] w-[0.64em]" />
-              <PenToolDoodle className="absolute left-[3.5em] top-[1.25em] w-[0.4em] z-20" />
-              <CameraDoodle className="absolute left-[4.3em] top-[1.75em] w-[0.56em]" />
+              <CodeDoodle className="absolute left-[3.37em] top-[-0.2em] w-[0.5em]" />
+              <ClaudeMascotDoodle className="absolute left-[3.5em] top-[1.25em] w-[0.4em] z-20" />
+              <img src={brainIcon} alt="" aria-hidden="true" className="absolute left-[4.3em] top-[1.75em] w-[0.56em]" />
             </div>
           </div>
 

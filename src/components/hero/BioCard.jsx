@@ -48,7 +48,7 @@ technologies to make impactful projects.
             <strong className="text-white font-bold">3</strong> files changed , 
           </span>
           <span>
-            <strong className="text-cyan-400 font-bold">582</strong> 582 insertions(+), 
+            <strong className="text-cyan-400 font-bold">582</strong> insertions(+), 
           </span>
           <span> 
             <strong className="text-brand-yellow font-bold">45</strong> deletions(-) 

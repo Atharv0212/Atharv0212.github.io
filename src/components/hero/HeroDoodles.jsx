@@ -35,46 +35,29 @@ export function MonitorDoodle({ className }) {
   );
 }
 
-export function CameraDoodle({ className }) {
-  return (
-    <svg className={className} viewBox="0 0 80 70" {...base} aria-hidden="true">
-      <g transform="rotate(-14 40 35)">
-        <rect x="6" y="20" width="66" height="40" rx="7" />
-        <path d="M24 20l4-9h20l4 9" />
-        <circle cx="39" cy="40" r="13" />
-        <circle cx="39" cy="40" r="7" />
-        <rect x="58" y="26" width="7" height="5" rx="1" />
-        <path d="M12 28h6" />
-      </g>
-    </svg>
-  );
-}
-
-export function PenToolDoodle({ className }) {
+// Claude Code mascot.
+export function ClaudeMascotDoodle({ className }) {
   return (
     <svg className={className} viewBox="0 0 70 80" {...base} aria-hidden="true">
-      <g transform="rotate(25 35 40)">
-        <path d="M35 6l17 34-17 14-17-14z" />
-        <path d="M35 6v28" />
-        <circle cx="35" cy="38" r="3.5" />
-        <path d="M24 62h22M28 68h14" />
-        <path d="M35 54v8" />
+      <g transform="rotate(-8 35 40)">
+        <path
+          d="M12 16H58V30H66V42H58V52H54V62H49V52H45V62H40V52H30V62H25V52H21V62H16V52H12V42H4V30H12Z"
+        />
+        {/* happy "> <" eyes */}
+        <path d="M22 26L29 31L22 36" />
+        <path d="M48 26L41 31L48 36" />
       </g>
-      <path d="M6 70c8-10 14-4 20-12" strokeDasharray="1 5" />
     </svg>
   );
 }
 
-export function ClapperDoodle({ className }) {
+// "</>" code glyph.
+export function CodeDoodle({ className }) {
   return (
-    <svg className={className} viewBox="0 0 100 80" {...base} aria-hidden="true">
-      <rect x="6" y="36" width="48" height="34" rx="3" />
-      <path d="M6 26l46-10 3 11-46 10z" />
-      <path d="M17 24l8 11M30 21l8 11M43 18l8 11" />
-      <path d="M24 46l14 8-14 8z" />
-      <circle cx="74" cy="22" r="9" />
-      <path d="M70 31h8M71 35h6" />
-      <path d="M74 4v-1M58 10l-3-3M90 10l3-3M54 22h-4M94 22h-4" />
+    <svg className={className} viewBox="0 0 60 40" {...base} strokeWidth={3} aria-hidden="true">
+      <path d="M20 8L8 20L20 32" />
+      <path d="M34 6L26 34" />
+      <path d="M40 8L52 20L40 32" />
     </svg>
   );
 }

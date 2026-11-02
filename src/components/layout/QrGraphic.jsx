@@ -1,7 +1,7 @@
 import qr from '../../data/vcardQr.json';
 
 // Scannable vCard QR, generated from vCard.vcf by `npm run qr`.
-const quiet = 2;
+const quiet = 0.2;
 
 export default function QrGraphic() {
   const total = qr.size + quiet * 2;

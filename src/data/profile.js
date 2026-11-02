@@ -3,12 +3,12 @@ export const profile = {
   name: 'Atharv Khare',
   initials: 'AK',
   tagline: 'CSAI @ IIIT DELHI',
-  role: 'Systems & CV Engineer',
-  revision: "Oct '26 Rev",
-  email: 'atharv22112@iiitd.ac.in',
-  phone: '+91 98XX-XX-IIITD',
+  role: 'Systems & ML Engineer',
+  revision: "Nov '26 Rev",
+  email: 'atharv25132@iiitd.ac.in',
+  phone: '+91 93107-15994',
   heroPhoto: '', // drop an image URL/path here (e.g. '/me.png' in public/) to fill the hero portrait
-  location: 'IIIT Delhi Campus, Okhla Phase III, New Delhi 110020',
+  location: 'IIIT Delhi , Okhla Phase III, New Delhi 110020',
   handles: {
     github: 'Atharv0212',
     leetcode: 'Atharv2006',
